@@ -102,10 +102,10 @@ const TestimonialsSlider: React.FC = () => {
             onMouseLeave={() => setIsHovered(false)}
           >
             {/* Comillas decorativas con colores de Comarapa */}
-            <div className="absolute top-2 sm:top-4 left-4 sm:left-8 text-[#7FB069] opacity-20 sm:opacity-30">
+            <div className="absolute top-2 sm:top-4 left-4 sm:left-8 text-[#2196F3] opacity-20 sm:opacity-30">
               <Quote className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20" />
             </div>
-            <div className="absolute bottom-2 sm:bottom-4 right-4 sm:right-8 text-[#7FB069] opacity-20 sm:opacity-30 transform rotate-180">
+            <div className="absolute bottom-2 sm:bottom-4 right-4 sm:right-8 text-[#2196F3] opacity-20 sm:opacity-30 transform rotate-180">
               <Quote className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20" />
             </div>
 
@@ -122,7 +122,7 @@ const TestimonialsSlider: React.FC = () => {
                     <blockquote className="text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed mb-4 sm:mb-6 md:mb-8 italic font-medium">
                       "{testimonial.text}"
                     </blockquote>
-                    <div className="text-[#7FB069]">
+                    <div className="text-[#2196F3]">
                       <p className="text-sm sm:text-base md:text-lg font-bold">{testimonial.name}</p>
                       <p className="text-xs sm:text-sm md:text-base text-white/80 mt-1">{testimonial.role}</p>
                     </div>
@@ -140,7 +140,7 @@ const TestimonialsSlider: React.FC = () => {
                 onClick={() => goToSlide(index)}
                 className={`w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 rounded-full transition-all duration-300 hover:scale-110 touch-manipulation ${
                   index === currentIndex 
-                    ? 'bg-[#7FB069] scale-110 shadow-lg' 
+                    ? 'bg-[#2196F3] scale-110 shadow-lg' 
                     : 'bg-gray-500 hover:bg-gray-400'
                 }`}
                 style={{ minWidth: '44px', minHeight: '44px' }}
