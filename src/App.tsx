@@ -3,7 +3,8 @@ import {
   Phone, Clock, MapPin, Users, Package, Truck, MessageCircle, 
   Facebook, Mail, Navigation, Shield, CheckCircle, Star,
   Calendar, Heart, Briefcase, GraduationCap, Church, PartyPopper,
-  Sun, Moon, Menu, X, ArrowRight, Award, Globe, Leaf
+  Sun, Moon, Menu, X, ArrowRight, Award, Globe, Leaf,
+  Bus
 } from 'lucide-react';
 import RouteMap from './components/RouteMap';
 import TestimonialsSlider from './components/TestimonialsSlider';
@@ -45,7 +46,7 @@ function App() {
             {/* Logo rediseñado */}
             <div className="flex items-center space-x-2 sm:space-x-3">
               <div className="bg-gradient-to-br from-comarapa-dark to-comarapa-medium p-2 sm:p-3 rounded-xl sm:rounded-2xl shadow-lg">
-                <Truck className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-white" />
+                <Bus className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-white" />
               </div>
               <div>
                 <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-comarapa-dark">Trans Comarapa</h1>
@@ -226,7 +227,7 @@ function App() {
               ].map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="bg-white/20 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 mb-2 sm:mb-3 inline-flex">
-                    <stat.icon className="h-5 w-5 sm:h-6 sm:w-6 text-comarapa-light" />
+                    <stat.icon className="h-5 w-5 sm:h-6 sm:w-6 text-comarapa-medium" />
                   </div>
                   <div className="text-lg sm:text-xl md:text-2xl font-bold">{stat.number}</div>
                   <div className="text-xs sm:text-sm text-white/80 leading-tight">{stat.label}</div>
@@ -265,7 +266,7 @@ function App() {
               </div>
               <div className="space-y-3 sm:space-y-4">
                 {[
-                  { hora: '08:00 AM', tipo: 'dia' },
+                  { hora: '08:30 AM', tipo: 'dia' },
                   { hora: '02:00 AM', tipo: 'dia' },
                   { hora: '08:30 PM', tipo: 'noche' },
                   { hora: '11:30 PM', tipo: 'noche' }
@@ -300,7 +301,7 @@ function App() {
               </div>
               <div className="space-y-3 sm:space-y-4">
                 {[
-                  { hora: '08:30 AM', tipo: 'dia' },
+                  { hora: '09:00 AM', tipo: 'dia' },
                   { hora: '02:30 AM', tipo: 'dia' },
                   { hora: '09:00 PM', tipo: 'noche' },
                   { hora: '00:00 PM', tipo: 'noche' }
