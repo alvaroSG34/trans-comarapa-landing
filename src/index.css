@@ -9,11 +9,11 @@
     --radius: 0.5rem;
     
     /* Colores regionales de Comarapa */
-    --comarapa-dark: #2D5A27;
-    --comarapa-medium: #4A8B3A;
-    --comarapa-light: #7FB069;
+    --comarapa-dark: #0D47A1;
+    --comarapa-medium: #2196F3;
+    --comarapa-light: #64B5F6;
     --comarapa-white: #FFFFFF;
-    --comarapa-gray: #F8F9FA;
+    --comarapa-gray: #E3F2FD;
     
     /* Variables shadcn/ui compatibles */
     --background: 0 0% 100%;
