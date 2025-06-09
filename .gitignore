@@ -104,7 +104,7 @@ coverage/
 
 # Gatsby files
 .cache/
-public
+# public - REMOVED: En proyectos Vite/React, la carpeta public debe estar en Git
 
 # Storybook build outputs
 .out

@@ -9,9 +9,24 @@ import {
 import RouteMap from './components/RouteMap';
 import TestimonialsSlider from './components/TestimonialsSlider';
 
+const heroImages = [
+  '/images/buses_challa.jpeg',
+  '/images/flota_blanca_rene.png',
+  '/images/doble_piso_verde.png'
+];
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Auto slider effect
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide(prevSlide => (prevSlide + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+    return () => clearInterval(timer);
+  }, []);
 
   // Scroll effect for header
   useEffect(() => {
@@ -124,19 +139,44 @@ function App() {
         </div>
       </header>
 
-      {/* Hero Section - Rediseñado con gradiente verde */}
-      <section id="inicio" className="relative min-h-screen flex items-center pt-16 sm:pt-20 md:pt-24">
-        {/* Background con overlay */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/images/bus-hero.jpg)' }}
-        ></div>
-        <div className="absolute inset-0 comarapa-gradient opacity-85"></div>
+      {/* Hero Section - Rediseñado con slider automático */}
+      <section id="inicio" className="relative min-h-screen flex items-center pt-16 sm:pt-20 md:pt-24 overflow-hidden">
+        {/* Contenedor de fondo para el slider */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          {/* Cada imagen del slider */}
+          {heroImages.map((image, index) => (
+            <div
+              key={image}
+              className={`absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ease-in-out ${
+                index === currentSlide ? 'opacity-100' : 'opacity-0'
+              }`}
+              style={{ backgroundImage: `url(${image})` }}
+            />
+          ))}
+          {/* Capa de gradiente sobre las imágenes */}
+          <div className="absolute inset-0 comarapa-gradient opacity-80"></div>
+        </div>
         
         {/* Patrón geométrico sutil boliviano */}
-        <div className="absolute inset-0 opacity-10" style={{
+        <div className="absolute inset-0 opacity-10 z-[5]" style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M20 20l10-10v20l-10-10z'/%3E%3C/g%3E%3C/svg%3E")`
         }}></div>
+
+        {/* Indicadores del Slider */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 hover:scale-110 ${
+                index === currentSlide 
+                  ? 'bg-white shadow-lg scale-125' 
+                  : 'bg-white/50 hover:bg-white/70'
+              }`}
+              aria-label={`Ir a imagen ${index + 1}`}
+            />
+          ))}
+        </div>
 
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 text-white z-10">
           <div className="max-w-5xl mx-auto text-center">
@@ -919,7 +959,7 @@ function App() {
           {/* Copyright */}
           <div className="border-t border-comarapa-medium/30 pt-8 text-center">
             <p className="text-white/60">
-              &copy; 2024 Trans Comarapa. Todos los derechos reservados. | Transporte seguro y confiable
+              &copy; 2025 Trans Comarapa. Todos los derechos reservados. | Transporte seguro y confiable
             </p>
             <p className="text-comarapa-light/80 mt-2">
               Conectando el corazón de Bolivia

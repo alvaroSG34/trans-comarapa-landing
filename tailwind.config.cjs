@@ -38,11 +38,13 @@ module.exports = {
 			colors: {
 				// Colores regionales de Comarapa
 				comarapa: {
+
 					'dark': '#0D47A1',     // Azul oscuro de Comarapa
 					'medium': '#2196F3',   // Azul cielo medio
 					'light': '#64B5F6',    // Celeste claro/accent
 					'white': '#FFFFFF',    // Blanco principal
 					'gray': '#E3F2FD',     // Gris claro para backgrounds
+
 				},
 				// Compatibilidad con shadcn/ui
 				border: 'hsl(var(--border))',
@@ -51,6 +53,7 @@ module.exports = {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
+
 					DEFAULT: '#0D47A1',  // Azul oscuro de Comarapa
 					foreground: '#FFFFFF',
 				},
@@ -60,6 +63,7 @@ module.exports = {
 				},
 				accent: {
 					DEFAULT: '#64B5F6',  // Celeste claro claro de Comarapa
+
 					foreground: '#2D5A27',
 				},
 				destructive: {
