@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import RouteMap from './components/RouteMap';
 import TestimonialsSlider from './components/TestimonialsSlider';
+import { Analytics } from '@vercel/analytics/next';
 
 const heroImages = [
   '/images/buses_challa.jpeg',
@@ -39,6 +40,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-comarapa-white font-inter">
+      <Analytics />
       {/* Header moderno siempre blanco */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg border-b border-comarapa-light/20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
