@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import RouteMap from './components/RouteMap';
 import TestimonialsSlider from './components/TestimonialsSlider';
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 
 const heroImages = [
   '/images/buses_challa.jpeg',
